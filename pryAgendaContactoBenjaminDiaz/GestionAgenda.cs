@@ -32,7 +32,7 @@ namespace pryAgendaContactoBenjaminDiaz
 
         private void mtbNumero_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
-            if (mtbNumero.Text != "")
+            if (mtbNumero.Text == "")
             {
                 btnRegistrar.Enabled = false;
             }
@@ -65,5 +65,11 @@ namespace pryAgendaContactoBenjaminDiaz
             txtContacto.Text = "";
             mtbNumero.Text = "";
         }
+
+        private void mtbNumero_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
     }
+    
 }

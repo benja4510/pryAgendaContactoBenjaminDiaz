@@ -65,13 +65,14 @@
             this.mtbNumero.Size = new System.Drawing.Size(84, 20);
             this.mtbNumero.TabIndex = 2;
             this.mtbNumero.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mtbNumero_MaskInputRejected);
+            this.mtbNumero.TextChanged += new System.EventHandler(this.mtbNumero_TextChanged);
             // 
             // txtContacto
             // 
             this.txtContacto.Location = new System.Drawing.Point(189, 37);
             this.txtContacto.Name = "txtContacto";
             this.txtContacto.Size = new System.Drawing.Size(84, 20);
-            this.txtContacto.TabIndex = 3;
+            this.txtContacto.TabIndex = 1;
             this.txtContacto.TextChanged += new System.EventHandler(this.txtContacto_TextChanged);
             // 
             // btnCancelar
@@ -89,7 +90,7 @@
             this.btnRegistrar.Location = new System.Drawing.Point(193, 135);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(80, 36);
-            this.btnRegistrar.TabIndex = 5;
+            this.btnRegistrar.TabIndex = 3;
             this.btnRegistrar.Text = "Registrar";
             this.btnRegistrar.UseVisualStyleBackColor = true;
             this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
@@ -100,7 +101,7 @@
             this.lstResultado.Location = new System.Drawing.Point(69, 208);
             this.lstResultado.Name = "lstResultado";
             this.lstResultado.Size = new System.Drawing.Size(236, 56);
-            this.lstResultado.TabIndex = 6;
+            this.lstResultado.TabIndex = 5;
             // 
             // lblCantidadCon
             // 
