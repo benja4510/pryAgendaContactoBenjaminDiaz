@@ -137,6 +137,7 @@
             this.Controls.Add(this.lblContacto);
             this.Name = "frmGestionAgenda";
             this.Text = "Agenda de Contactos";
+            this.Load += new System.EventHandler(this.frmGestionAgenda_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -70,6 +70,13 @@ namespace pryAgendaContactoBenjaminDiaz
         {
             
         }
+
+        private void frmGestionAgenda_Load(object sender, EventArgs e)
+        {
+            btnRegistrar.Enabled = false;
+            mtbNumero.Enabled = false;
+             
+        }
     }
     
 }
