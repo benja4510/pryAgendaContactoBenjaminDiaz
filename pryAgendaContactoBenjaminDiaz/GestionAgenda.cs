@@ -47,16 +47,34 @@ namespace pryAgendaContactoBenjaminDiaz
         string vContador;
         string vFecha;
 
+        string[] vecTelefono = new string[5];
+        string[] vecContacto = new string[5];
+
+        int indice = 0;
+
+
+
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
+            vecTelefono[indice] = mtbNumero.Text;
+            vecContacto[indice] = txtContacto.Text;
+
             vContacto = txtContacto.Text;
             vNumero = mtbNumero.Text;
+            
             lstResultado.Items.Add("Contacto"+vContacto+"Numero"+vNumero);
+            
             txtContacto.Text = "";
             mtbNumero.Text = "";
-            vContador = vContador+1;
-            lblCantidadCon.Text = "Cantidad de contactos: "+vContador;
-            lblFechayHora.Text = "Fecha y hora:" +vFecha;
+
+
+
+            vContador = vContador + 1;
+            mtbCantContactos.Text= Convert.ToString(vContador);
+            mtbFechayhora.Text = Convert.ToString(vFecha);
+            
+            
+            indice++;
 
         }
 
@@ -73,9 +91,17 @@ namespace pryAgendaContactoBenjaminDiaz
 
         private void frmGestionAgenda_Load(object sender, EventArgs e)
         {
+
+            label1.Text = DateTime.Now.ToString();
+
             btnRegistrar.Enabled = false;
             mtbNumero.Enabled = false;
              
+        }
+
+        private void btnListar_Click(object sender, EventArgs e)
+        {
+
         }
     }
     
