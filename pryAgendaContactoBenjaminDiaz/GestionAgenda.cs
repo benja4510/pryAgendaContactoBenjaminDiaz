@@ -18,7 +18,7 @@ namespace pryAgendaContactoBenjaminDiaz
         }
 
         private void txtContacto_TextChanged(object sender, EventArgs e)
-        {
+        {   // Habilito o deshabilito el campo mtbNumero según si el campo txtContacto está vacío o no
             if (txtContacto.Text == "")
             {
                 mtbNumero.Enabled = false;
@@ -31,7 +31,7 @@ namespace pryAgendaContactoBenjaminDiaz
         }
 
         private void mtbNumero_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
+        {   // Habilito o deshabilito el botón Registrar según si el campo mtbNumero está vacío o no
             if (mtbNumero.Text == "")
             {
                 btnRegistrar.Enabled = false;
@@ -41,7 +41,7 @@ namespace pryAgendaContactoBenjaminDiaz
                 btnRegistrar.Enabled = true;
             }
         }
-
+        // Variables globales
         string vContacto;
         string vNumero;
         string vContador;
@@ -55,7 +55,7 @@ namespace pryAgendaContactoBenjaminDiaz
 
 
         private void btnRegistrar_Click(object sender, EventArgs e)
-        {
+        {   // Guardo los datos en los vectores
             vecTelefono[indice] = mtbNumero.Text;
             vecContacto[indice] = txtContacto.Text;
 
@@ -63,23 +63,25 @@ namespace pryAgendaContactoBenjaminDiaz
             vNumero = mtbNumero.Text;
             
             lstResultado.Items.Add("Contacto"+vContacto+"Numero"+vNumero);
-            
+
+            // Limpio los campos de texto
             txtContacto.Text = "";
             mtbNumero.Text = "";
 
 
-
+            // Actualizo el contador de contactos
             vContador = vContador + 1;
             mtbCantContactos.Text= Convert.ToString(vContador);
-            mtbFechayhora.Text = Convert.ToString(vFecha);
-            
-            
+
+
+            // Actualizo la fecha y hora del último contacto agregado
             indice++;
 
+            
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
-        {
+        {   // Limpio los campos de texto
             txtContacto.Text = "";
             mtbNumero.Text = "";
         }
@@ -92,7 +94,7 @@ namespace pryAgendaContactoBenjaminDiaz
         private void frmGestionAgenda_Load(object sender, EventArgs e)
         {
 
-            label1.Text = DateTime.Now.ToString();
+            
 
             btnRegistrar.Enabled = false;
             mtbNumero.Enabled = false;
@@ -100,7 +102,19 @@ namespace pryAgendaContactoBenjaminDiaz
         }
 
         private void btnListar_Click(object sender, EventArgs e)
-        {
+        {   // Limpio el ListBox antes de mostrar los contactos
+            lstListado.Items.Clear();
+
+            
+
+            // Recorro los vectores y agrego los contactos al ListBox
+            for (int i = 0; i < vecContacto.Length; i++)
+            {
+                if (vecContacto[i] != null)
+                {
+                    lstListado.Items.Add("Contacto: " + vecContacto[i] + " - Telefono: " + vecTelefono[i]);
+                }
+            }
 
         }
     }
